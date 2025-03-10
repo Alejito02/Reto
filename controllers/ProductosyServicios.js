@@ -1,4 +1,4 @@
-const ProductosyServiciosModel = require("../models/ProductosyServicios.js");
+import ProductosyServiciosModel from '../models/ProductosyServicios.js'
 
 const postProductosyServicios = async (req, res) => {
     try {
@@ -44,5 +44,5 @@ const getProductoServicio = async (req, res) => {
     }
 }
 
-module.exports = {postProductosyServicios, getProductosyServicios, getProductoServicio};
+export {postProductosyServicios, getProductosyServicios, getProductoServicio};
 

@@ -1,9 +1,9 @@
-const UsuariosSchema = require("../models/Usuarios.js");
+import UsuariosModel from '../models/Usuarios.js'
 
 const postUsuarios = async (req, res) => {
     try{
         const{identification, dv, company, trade_name, names, address, email, phone, legal_organization_id, tribute_id, identification_document_id, municipality_id,} = req.body;
-        const usuario = new UsuariosSchema({
+        const usuario = new UsuariosModel({
             identification,
             dv,
             company,
@@ -27,7 +27,7 @@ const postUsuarios = async (req, res) => {
 
 const getUsuarios = async (req, res) => {
     try {
-        const usuarios = await UsuariosSchema.find();
+        const usuarios = await UsuariosModel.find();
         res.json(usuarios);
     } catch (error) {
         console.log(error);
@@ -37,7 +37,7 @@ const getUsuarios = async (req, res) => {
 
 const getUsuario = async (req, res) => {
     try {
-        const usuario = await UsuariosSchema.findById(req.params.id);
+        const usuario = await UsuariosModel.findById(req.params.id);
         res.json(usuario);
     } catch (error) {
         console.log(error);
@@ -48,7 +48,7 @@ const getUsuario = async (req, res) => {
 const putUsuarios = async (req, res) => {
     try {
         const {names, address, email, phone,} = req.body;
-        const usuario = await UsuariosSchema.findById(req.params.id);
+        const usuario = await UsuariosModel.findById(req.params.id);
         usuario.names = names;
         usuario.address = address;
         usuario.email = email;
@@ -61,4 +61,4 @@ const putUsuarios = async (req, res) => {
     }
 };
 
-module.exports={postUsuarios, getUsuarios, getUsuario, putUsuarios};
+export {postUsuarios, getUsuarios, getUsuario, putUsuarios};

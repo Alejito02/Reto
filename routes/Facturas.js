@@ -1,21 +1,13 @@
-const express = require("express");
-const {getFacturas, getFactura, postFacturas} = require("../controllers/Facturas.js");
+import { Router } from "express";
+import {getFacturas, getFactura, postFacturas} from '../controllers/Facturas.js';
 
-const helperFacturas = require("../helpers/Facturas.js");
 
-const router = express.Router();
+const router = Router();
 
-router.post("/", [
-   
-] , postFacturas);
+router.post("/" ,postFacturas);
 
-router.get("/Facturas",[
-   
-], getFacturas);
+router.get("/Facturas" ,getFacturas);
 
-router.get("/Facturas/:id",[
-    
-    
-], getFactura);
+router.get("/Facturas/:id", getFactura);
 
-module.exports=router
+export default router

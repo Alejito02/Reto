@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const FacturasSchema = new mongoose.Schema({
     type: "object",
@@ -24,5 +24,5 @@ const FacturasSchema = new mongoose.Schema({
     },
 });
 
-module.exports= mongoose.model('Facturas', FacturasSchema);
+export default mongoose.model('Facturas', FacturasSchema);
 

@@ -1,16 +1,17 @@
-const express = require("express");
-const { postUsuarios, getUsuario, putUsuarios } = require("../controllers/Usuarios.js");
-const { check } = require("express-validator");
-const ValidarC = require("../middlewares/ValidarC.js");
-const helperUsuarios =require("../helpers/Usuarios.js") ;
+import { Router } from "express";
+import {getUsuarios ,postUsuarios, getUsuario, putUsuarios} from '../controllers/Usuarios.js'
 
-const router = express.Router();
+
+const router =Router();
 
 router.post("/", [
 
 ] , postUsuarios);
 
-router.get("/Usurios/:id",[
+
+router.get("/users", getUsuarios)
+
+router.get("/Usuarios/:id",[
    
 ], getUsuario);
 
@@ -18,4 +19,5 @@ router.put("/Usuarios/:id",[
    
 ], putUsuarios);
 
-module.exports = router
+
+export default router
