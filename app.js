@@ -5,8 +5,7 @@ const cors = require("cors");
 
 const Facturas= require ("./routes/Facturas");
 const ProductosyServicios= require ("./routes/ProductosyServicios.js");
-const Usuarios =require ("./routes/Usuarios.js"); 
-
+import usuarios from './routes/Usuarios.js'
 
 const app = express()
 app.use(express.json())
@@ -14,7 +13,7 @@ app.use(express.static("public"))
 app.use(cors())
 app.use("/api/Facturas", Facturas)
 app.use("/api/ProductosyServicios", ProductosyServicios)
-app.use("/api/Usuarios", Usuarios)
+app.use("/api/usuarios", usuarios)
 
 dotenv.config()
 

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const UsuariosSchema = new mongoose.Schema({
     identification: { type: "string", pattern: "^\\d+$" },
@@ -18,4 +18,4 @@ const UsuariosSchema = new mongoose.Schema({
 });
 
 
-module.exports= mongoose.model("Usuarios", UsuariosSchema);
+export default mongoose.model("Usuarios", UsuariosSchema);
