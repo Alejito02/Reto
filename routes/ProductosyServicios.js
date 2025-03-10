@@ -1,16 +1,13 @@
-const express = require("express");
-const { postProductosyServicios, getProductoServicio } =require("../controllers/ProductosyServicios.js") ;
-const ValidarC = require("../middlewares/ValidarC.js");
-const helperProductosyServicios = require("../helpers/ProductostServicios.js");
+import { Router } from "express";
+import { postProductosyServicios, getProductoServicio } from '../controllers/ProductosyServicios.js'
 
-const router = express.Router();
 
-router.post("/", [ 
-  
-], postProductosyServicios);
+const router = Router();
+
+router.post("/", postProductosyServicios);
 
 router.get("/ProductosyServicios",[
    
 ], getProductoServicio);
 
-module.exports=router
+export default router

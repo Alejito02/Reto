@@ -1,4 +1,4 @@
-const FacturasSchema= require("../models/Facturas.js");
+import FacturasSchema from '../models/Facturas.js';
 
 
 const postFacturas = async (req, res) => {
@@ -44,4 +44,4 @@ const getFactura = async (req, res) => {
     }
 }
 
-module.exports = {getFacturas, getFactura, postFacturas}  
+export {getFacturas, getFactura, postFacturas}  

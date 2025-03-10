@@ -1,10 +1,11 @@
-const express = require("express") ;
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import cors from "cors";
 
-const Facturas= require ("./routes/Facturas");
-const ProductosyServicios= require ("./routes/ProductosyServicios.js");
+
+import Facturas from './routes/Usuarios.js'
+import ProductosyServicios from './routes/ProductosyServicios.js';
 import usuarios from './routes/Usuarios.js'
 
 const app = express()
