@@ -28,7 +28,7 @@ const postUsuarios = async (req, res) => {
 const getUsuarios = async (req, res) => {
     try {
         const usuarios = await UsuariosModel.find();
-        res.json(usuarios);
+        res.json(usuarios); 
     } catch (error) {
         console.log(error);
         res.status(400).json({message: "Error al obtener los usuarios"});

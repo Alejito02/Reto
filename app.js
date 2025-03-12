@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.static("public"))
 app.use(cors())
 app.use("/api/Facturas", Facturas)
-app.use("/api/ProductosyServicios", ProductosyServicios)
+app.use("/api/productos", ProductosyServicios)
 app.use("/api/usuarios", usuarios)
 
 dotenv.config()

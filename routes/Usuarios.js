@@ -9,6 +9,8 @@ router.post("/", [
 ] , postUsuarios);
 
 
+
+
 router.get("/users", getUsuarios)
 
 router.get("/Usuarios/:id",[
