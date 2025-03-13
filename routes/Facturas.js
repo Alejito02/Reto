@@ -1,13 +1,14 @@
 import { Router } from "express";
-import {getFacturas, getFactura, postFacturas} from '../controllers/Facturas.js';
+import {getFacturas, postFacturas} from '../controllers/Facturas.js';
 
 
 const router = Router();
 
 router.post("/" ,postFacturas);
+router.get("/" ,getFacturas);
 
-router.get("/Facturas" ,getFacturas);
+router.post("/facturas" ,getFacturas);
 
-router.get("/Facturas/:id", getFactura);
+
 
 export default router
