@@ -5,11 +5,7 @@ import { postProductosyServicios, getProductosyServicios, } from '../controllers
 const router = Router();
 
 router.post("/", postProductosyServicios);
-
-
-
-router.post("/items", postProductosyServicios)
-
-router.get("/", getProductosyServicios)
+router.post("/items", postProductosyServicios);
+router.get("/", getProductosyServicios);
 
 export default router

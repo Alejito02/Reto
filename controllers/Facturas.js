@@ -1,10 +1,10 @@
-import FacturasSchema from '../models/Facturas.js';
+import FacturaModel from '../models/Facturas.js';
 
 
 const postFacturas = async (req, res) => {
     try {
         const {numbering_range_id, reference_code, observation, payment_form, payment_due_date, payment_method_code, billing_period, customer, items} = req.body;
-        const factura = new FacturasSchema({
+        const factura = new FacturaModel({
             numbering_range_id,
             reference_code,
             observation,
@@ -25,7 +25,7 @@ const postFacturas = async (req, res) => {
 
 const getFacturas = async (req, res) => {
     try {
-        const facturas = await FacturasSchema.find();
+        const facturas = await FacturaModel.find();
         res.json(facturas);
     } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ const getFacturas = async (req, res) => {
 
 const getFactura = async (req, res) => {
     try {
-        const factura = await FacturasSchema.findById(req.params.id);
+        const factura = await FacturaModel.find(req.params);
         res.json(factura);
     } catch (error) {
         console.log(error);
