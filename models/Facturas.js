@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 
 const FacturasSchema = new mongoose.Schema({
-    type: "object",
-    properties: {
         numbering_range_id:  { type: Number, min: 1 },
         reference_code: { type: "string" },
         observation: { type: "string" },
@@ -21,7 +19,6 @@ const FacturasSchema = new mongoose.Schema({
         },
      customer: {type: mongoose.Schema.Types.ObjectId, ref: "Usuarios"},
      items: {type: mongoose.Schema.Types.ObjectId, ref: "ProductosyServicios"},
-    },
 });
 
 export default mongoose.model('Facturas', FacturasSchema);
