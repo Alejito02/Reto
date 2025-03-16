@@ -5,7 +5,7 @@ import cors from "cors";
 
 
 import facturas from './routes/Facturas.js';
-import productosyServicios from './routes/ProductosyServicios.js';
+import productoyServicio from './routes/ProductosyServicios.js';
 import usuarios from './routes/Usuarios.js'
 
 const app = express()
@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.static("public"))
 app.use(cors())
 app.use("/api/facturas", facturas)
-app.use("/api/productos", productosyServicios)
+app.use("/api/productos", productoyServicio)
 app.use("/api/usuarios", usuarios)
 
 dotenv.config()
