@@ -17,8 +17,8 @@ const FacturasSchema = new mongoose.Schema({
             },
             required: ["start_date", "start_time", "end_date", "end_time"]
         },
-     customer: {type: mongoose.Schema.Types.ObjectId, ref: "Usuarios"},
-     items: {type: mongoose.Schema.Types.ObjectId, ref: "ProductosyServicios"},
+     customer: {type: mongoose.Schema.Types.Object, ref: "Usuarios"},
+     items: {type: mongoose.Schema.Types.Array, ref: "ProductosyServicios"},
 });
 
 export default mongoose.model('Facturas', FacturasSchema);
