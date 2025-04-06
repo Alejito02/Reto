@@ -11,6 +11,12 @@ const ProductosyServiciosSchema = new mongoose.Schema({
     standard_code_id: { type: Number, min: 1 },
     is_excluded: { type: Number, enum: [0, 1] },
     tribute_id: { type: Number, min: 1 },
+    withholding_taxes: [
+        {
+            code: { type: String, required: true },
+            withholding_tax_rate: { type: String, required: true }
+        }
+    ]
 });
 
 export default mongoose.model("ProductosyServicios", ProductosyServiciosSchema);
