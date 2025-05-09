@@ -1,22 +1,17 @@
 import mongoose from "mongoose";
 
 const ProductosyServiciosSchema = new mongoose.Schema({
-    code_reference: { type: String },
-    name: { type: String, minlength: 1 },
-    quantity: { type: Number, min: 1 },
-    discount_rate: { type: Number, min: 0 },
-    price: { type: Number, min: 0 },
-    tax_rate: { type: Number, min: 0, max: 100 }, 
-    unit_measure_id: { type: Number, min: 1 },
-    standard_code_id: { type: Number, min: 1 },
-    is_excluded: { type: Number, enum: [0, 1] },
-    tribute_id: { type: Number, min: 1 },
-    withholding_taxes: [
-        {
-            code: { type: String, required: true },
-            withholding_tax_rate: { type: String, required: true }
-        }
-    ]
+    code_reference: { type: String, required: true },
+    name: { type: String, required: true },
+    discount_rate: { type: Number, required: true },
+    price: { type: Number, required: true },
+    tax_rate: { type: String, required: true },
+    unit_measure_id: { type: Number, required: true },
+    standard_code_id: { type: Number, required: true },
+    is_excluded: { type: Number, required: true },
+    tribute_id: { type: Number, required: true },
+    withholding_taxes:{type:Array},
+    state:{type:Number, default:2}
 });
 
 export default mongoose.model("ProductosyServicios", ProductosyServiciosSchema);
